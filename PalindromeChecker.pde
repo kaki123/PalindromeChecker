@@ -16,12 +16,23 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  if(word.substring(0,word.length()).equals("rotator"))
-  return true;
-  if(word.substring(0,word.length()).equals("test"))
+  
+  String bob1="";
+  for(int i=0; i<word.length(); i++){
+    if(Character.isLetter(word.charAt(i))==true){
+      bob1= bob1 +word.charAt(i);
+    }
+      
+  }
+  
+  String bob2= "";
+  for(int i=bob1.length()-1;i>=0;i--){  
+    bob2= bob2 + bob1.charAt(i);
+  }
+
+  if(bob1.toLowerCase().substring(0,bob1.length()).equals(bob2.toLowerCase().substring(0,bob2.length())))
+    return true;
+
   return false;
-if(word.substring(0,word.length()).equals("rewriter"))
-  return false;
-return false;
 }
 
